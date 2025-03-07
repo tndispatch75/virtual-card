@@ -5,150 +5,272 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TN Dispatch - Digital Business Card</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: #e6e6e6;
-            display: flex;
-            height: 100vh;
-            width: 100vw;
-            font-family: 'Montserrat', sans-serif;
-            justify-content: center;
-            align-items: center;
-        }
-        .container {
-            width: 1200px;
-            max-width: 100%;
-            margin: auto;
-        }
-        .display {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .display .display-item {
-            padding: 15px;
-        }
-        .business-card {
-            width: 550px;
-            height: auto;
-            max-width: 100%;
-            border-radius: 4px;
-            background: linear-gradient(135deg, #fff 0%, #fff 50%, rgba(155, 0, 9, 0.61) 50.5%, rgba(155, 0, 0, 0.80) 100%);
-            color: rgba(0, 0, 0, .8);
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-            padding: 20px;
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid rgba(0, 0, 0, .2);
-            padding-bottom: 15px;
-        }
-        .profile-image {
-            background-image: url(./logo.jpg);
-            background-position: center;
-            background-size: cover;
-            width: 120px;
-            height: 120px;
-            border-radius: 100%;
-        }
-        .profile-title {
-            padding-left: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        }
-        .info {
-            display: flex;
-            justify-content: space-between;
-            padding-top: 15px;
-        }
-        .info-contact span {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-        .info-contact i {
-            margin-right: 8px;
-        }
-        .info-bio {
-            flex-grow: 1;
-            text-align: center;
-            padding: 15px;
-        }
-        .info-contact a {
-            color: rgba(0, 0, 0, .8);
-            text-decoration: none;
-        }
-        
-        @media (max-width: 768px) {
-            .display {
-                flex-direction: column;
-                align-items: center;
-            }
-            .business-card {
-                width: 90%;
-                padding: 15px;
-            }
-            .profile {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .profile-title {
-                padding-left: 0;
-                text-align: center;
-            }
-            .info {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .info-contact span {
-                display: block;
-            }
-            .profile-image {
-                width: 100px;
-                height: 100px;
-            }
-        }
+       @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+ body {
+     font-size: 16px;
+     color: #404040;
+     font-family: Montserrat, sans-serif;
+     background-color: #cd1c18;
+background-image: linear-gradient(326deg, #cd1c18 0%, #66023c 74%);
+     background-position: center;
+     background-attachment: fixed;
+     margin: 0;
+     padding: 2rem 0;
+     display: grid;
+     place-items: center;
+     box-sizing: border-box;
+}
+ .card {
+     background-color: #fff;
+     max-width: 360px;
+     display: flex;
+     flex-direction: column;
+     overflow: hidden;
+     border-radius: 2rem;
+     box-shadow: 0px 1rem 1.5rem rgba(0,0,0,0.5);
+}
+ .card .banner {
+     background-image: url("https://media.istockphoto.com/id/1465157700/photo/brightly-red-colored-semi-truck-speeding-on-a-two-lane-highway-with-cars-in-background-under.jpg?s=612x612&w=0&k=20&c=cfbbPy2ylvFGRULNLGO_Ucm-C5DsOJMFHiZBdKGsq3c=");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 11rem;
+     display: flex;
+     align-items: flex-end;
+     justify-content: center;
+     box-sizing: border-box;
+}
+ .card .banner .profile-img {
+     background-color: #fff;
+     width: 8rem;
+     height: 8rem;
+     box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+     border-radius: 50%;
+     transform: translateY(50%);
+     transition: transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .card .banner .profile-img:hover {
+     transform: translateY(50%) scale(1.3);
+}
+
+.profile-img {
+     background-image: url(./logo.jpg);
+     background-position: center;
+     background-size: cover;
+     width: 120px;
+     height: 120px;
+     border-radius: 100%;
+}
+ .card .menu {
+     width: 100%;
+     height: 5.5rem;
+     padding: 1rem;
+     display: flex;
+     align-items: flex-start;
+     justify-content: flex-end;
+     position: relative;
+     box-sizing: border-box;
+}
+ .card .menu .opener {
+     width: 2.5rem;
+     height: 2.5rem;
+     position: relative;
+     border-radius: 50%;
+     transition: background-color 100ms ease-in-out;
+}
+ .card .menu .opener:hover {
+     background-color: #f2f2f2;
+}
+ .card .menu .opener span {
+     background-color: #404040;
+     width: 0.4rem;
+     height: 0.4rem;
+     position: absolute;
+     top: 0;
+     left: calc(50% - 0.2rem);
+     border-radius: 50%;
+}
+ .card .menu .opener span:nth-child(1) {
+     top: 0.45rem;
+}
+ .card .menu .opener span:nth-child(2) {
+     top: 1.05rem;
+}
+ .card .menu .opener span:nth-child(3) {
+     top: 1.65rem;
+}
+ .card h2.name {
+     text-align: center;
+     padding: 0 2rem 0.5rem;
+     margin: 0;
+}
+ .card .title {
+     color: #a0a0a0;
+     font-size: 0.85rem;
+     text-align: center;
+     padding: 0 2rem 1.2rem;
+}
+ .card .actions {
+     padding: 0 2rem 1.2rem;
+     display: flex;
+     flex-direction: column;
+     order: 99;
+}
+ .card .actions .anchor-info {
+     padding: 0 0 1rem;
+     display: flex;
+}
+ .card .actions .anchor-info h2 {
+     text-align: center;
+     width: 50%;
+     margin: 0;
+     box-sizing: border-box;
+}
+ .card .actions .anchor-info h2 a {
+     text-decoration: none;
+     padding: 0.8rem;
+     display: flex;
+     flex-direction: column;
+     border-radius: 0.8rem;
+     transition: background-color 100ms ease-in-out;
+}
+ .card .actions .anchor-info h2 a span {
+     color: #1c9eff;
+     font-weight: bold;
+     transform-origin: bottom;
+     transform: scaleY(1.3);
+     transition: color 100ms ease-in-out;
+}
+ .card .actions .anchor-info h2 a small {
+     color: #afafaf;
+     font-size: 0.85rem;
+     font-weight: normal;
+}
+ .card .actions .anchor-info h2 a:hover {
+     background-color: #f2f2f2;
+}
+ .card .actions .anchor-info h2 a:hover span {
+     color: #007ad6;
+}
+.anchor-btn{
+    padding-bottom: 10px;
+}
+.phone-btn a {
+background-color:#7360f2;
+color: #FFFF;
+}
+.site-btn a{
+    background-color:#4C8BF5;
+color: #FFFF;
+}
+.gmail-btn a {
+background-color:#3e65cf;
+color: #FFFF;
+}
+.fb-btn a {
+background-color: #1877F2;
+
+     color: #FFFF;
+}
+
+.insta-btn a {
+background-color: #833AB4;
+
+     color: #FFFF;
+}
+
+.tiktok-btn a {
+background-color: #25F4EE;
+
+     color: #000;
+}
+
+ .card .actions .anchor-btn a {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+     font: inherit;
+     font-weight: bold;
+/*     background-color: #ffd01a;*/
+     width: 100%;
+     border: none;
+     padding: 1rem;
+     outline: none;
+     box-sizing: border-box;
+     border-radius: 1.5rem/50%;
+     transition: background-color 100ms ease-in-out, transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+ .card .actions .anchor-btn a:hover {
+     background-color: #efb10a;
+     transform: scale(1.1);
+}
+ .card .actions .anchor-btn a:active {
+     background-color: #e8a200;
+     transform: scale(1);
+}
+ .card .desc {
+     text-align: justify;
+     padding: 0 2rem 2.5rem;
+     order: 100;
+}
+ 
+
+ 
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="display">
-            <div class="display-item">
-                <div class="business-card">
-                    <div class="profile">
-                        <div class="profile-image"></div>
-                        <div class="profile-title">
-                            <h2>TN Dispatch</h2>
-                            <h3>Reliable Dispatch Services</h3>
-                            <span>Trucks, Owner-Operators & Small Fleets!</span>
-                        </div>
-                    </div>
-                    <div class="info">
-                        <div class="info-contact">
-                            <span><i class="fa fa-phone"></i> <a href="tel:9547025563">954-702-5563</a></span>
-                            <span><i class="fa fa-at"></i> <a href="mailto:tndispatch75@gmail.com">tndispatch75@gmail.com</a></span>
-                            <span><i class="fa fa-globe"></i> <a href="https://tndispatch.org/" target="_blank">Website</a></span>
-                            <span><i class="fa-brands fa-facebook-f"></i> <a href="https://www.facebook.com/profile.php?id=61566049354064" target="_blank">Facebook</a></span>
-                            <span><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/tn_logistics/" target="_blank">Instagram</a></span>
-                            <span><i class="fa-brands fa-tiktok"></i> <a href="https://www.tiktok.com/@tnlogistic75" target="_blank">TikTok</a></span>
-                        </div>
-                        <div class="info-bio">
-                            <p style="color: white;">TN Dispatch is a freight dispatch service operating across the U.S., specializing in dispatching reefers, dry vans, flatbeds, power-only, box trucks, and hotshots—with more freight types coming soon!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="card">
+    <div class="banner">
+      <div class="profile-img"></div></div>
+    <div
+        class="menu">
+        <div class="opener"><span></span><span></span><span></span></div>
+</div>
+<h2 class="name">TN Dispatch</h2>
+<div class="title">Reliable Dispatch Services</div>
+<div class="actions">
+    
+    <div class="anchor-btn phone-btn">
+        <a href="tel:9547025563">
+            <i class="fa fa-phone"></i> 
+            <span >954-702-5563</span>
+        </a>
     </div>
+    <div class="anchor-btn gmail-btn">
+        <a href="mailto:tndispatch75@gmail.com">
+            <i class="fa fa-at"></i> 
+            <span >tndispatch75@gmail.com</span>
+        </a>
+    </div>
+    <div class="anchor-btn site-btn">
+        <a href="https://tndispatch.org" target="_blank">
+            <i class="fa fa-globe"></i> 
+            <span >https://tndispatch.org</span>
+        </a>
+    </div>
+    <div class="anchor-btn fb-btn">
+        <a href="https://www.facebook.com/profile.php?id=61566049354064" target="_blank">
+            <i class="fa-brands fa-facebook-f"></i> 
+            <span >Facebook</span>
+        </a>
+    </div>
+    <div class="anchor-btn insta-btn">
+        <a href="https://www.instagram.com/tn_logistics/" target="_blank">
+            <i class="fa-brands fa-instagram"></i> 
+            <span >Instagram</span>
+        </a>
+    </div>
+    <div class="anchor-btn tiktok-btn">
+        <a href="https://www.tiktok.com/@tnlogistic75" target="_blank">
+            <i class="fa-brands fa-tiktok"></i> 
+            <span >Tiktok</span>
+        </a>
+    </div>
+</div>
+<div class="desc">TN Dispatch is a freight dispatch service operating across the U.S., specializing in dispatching reefers, dry vans, flatbeds, power-only, box trucks, and hotshots—with more freight types coming soon!</div>
+</div>
+</div>
 </body>
 </html>
